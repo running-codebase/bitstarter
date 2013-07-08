@@ -4,16 +4,19 @@ var fs = require('fs');
 
 var app = express.createServer(express.logger());
 
-var output;
+var output = "Just Text";
 
 fs.readFile("index.html", function read(data,err) {
-    output = data.toString();
+    if (err){
+	output = "NOPE"
+    }
+output = data.toString();
 
 });
 
 
 app.get('/', function(request, response) {
-  response.send("JUST TEXT");
+  response.send(output);
 });
 
 var port = process.env.PORT || 5000;
