@@ -9,7 +9,7 @@ var stringResults = fileBuffer.toString('utf8',0,fileBuffer.length);
 
 
 app.get('/', function(request, response) {
-  response.send(stringResults);
+  response.send("this?");
 });
 
 var port = process.env.PORT || 5000;
