@@ -10,14 +10,13 @@ var output = "Just Text";
 app.get('/', function(request, response) {
 
     fs.readFile("index.html", function read(data,err) {
-	if (err){
-	    output = "NOPE"
-	}
-	output = data.toString();
 
+	if (err){output = "NOPE";}
+	output = data.toString();
+	response.send(output);
     });
 
-  response.send(output);
+
 });
 
 var port = process.env.PORT || 5000;
