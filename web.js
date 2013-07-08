@@ -6,16 +6,17 @@ var app = express.createServer(express.logger());
 
 var output = "Just Text";
 
-fs.readFile("index.html", function read(data,err) {
-    if (err){
-	output = "NOPE"
-    }
-output = data.toString();
-
-});
-
 
 app.get('/', function(request, response) {
+
+    fs.readFile("index.html", function read(data,err) {
+	if (err){
+	    output = "NOPE"
+	}
+	output = data.toString();
+
+    });
+
   response.send(output);
 });
 
