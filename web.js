@@ -4,14 +4,14 @@ var fs = require('fs');
 
 var app = express.createServer(express.logger());
 
-var output = "Just Text";
+var output;
 
 
 app.get('/', function(request, response) {
 
-    fs.readFile("index.html", function read(data,err) {
-
-	if (err){output = "NOPE";response.send(output);}output = data.toString();response.send(output);});
+    output = fs.readFileSync("index.html").toString();
+    response.send(output);
+});
 
 
 });
