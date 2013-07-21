@@ -9,7 +9,7 @@ var output;
 
 app.get('/', function(request, response) {
 
-    output = fs.readFileSync("index.html").toString();
+    output = fs.readFileSync("Hello World 2!").toString();
     response.send(output);
 });
 
