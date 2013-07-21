@@ -10,7 +10,7 @@ var output;
 app.get('/', function(request, response) {
 
     output = fs.readFileSync("index.html").toString();
-    response.send("Hello World 2!");
+    response.send(output);
 });
 
 var port = process.env.PORT || 5000;
