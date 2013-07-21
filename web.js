@@ -9,8 +9,8 @@ var output;
 
 app.get('/', function(request, response) {
 
-    output = fs.readFileSync("Hello World 2!").toString();
-    response.send(output);
+    output = fs.readFileSync("index.html").toString();
+    response.send("Hello World 2!");
 });
 
 var port = process.env.PORT || 5000;
